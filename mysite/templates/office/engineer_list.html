@@ -1,0 +1,22 @@
+{% extends "office/base.html" %}
+
+{% block content %}
+    <h2 style="display:inline">Engineer List </h2>
+    <a href="create/" class="addlink">
+    <U><b>[Add Engineer]</b></U></a>
+    <p></p>
+
+    {% if object_list %}
+    <ul>
+        {% for engr in object_list %}
+        <li class="detail_list">
+          <a href="{{ engr.get_absolute_url }}">{{ engr.engr_name }}</a> ({{engr.engr_team}})
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no engineers.</p>
+    {% endif %}       
+{% endblock %}
+

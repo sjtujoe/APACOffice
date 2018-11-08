@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    -->
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $('#btnLogin').click(function(){
+                username = $('#username').val()
+                password = $('#password').val()
+                remember = $('#remember').val()
+                vcode = $('#vcode').val()
+
+                $.ajax({
+                    'url':'/book/login_ajax_check/',
+                    'type': 'post',
+                    'data': {'username':username, 'password':password, 'remember':remember, 'vcode':vcode},
+                    'datatype': 'json'
+                }).success(function (data){
+                    if (data.res == 0){
+                        $('#errmsg').show().html('username or password error!')
+                    }
+                    else{
+                        location.href = '../change_pwd'
+                    }
+
+                })
+            })
+        })
+    </script>
+    <style>
+        #errmsg{
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <form method="POST" action="../login_check/">
+        {% csrf_token %}
+        username:<input type="text" name="username"><br/>
+        password:<input type="password" name="password"><br/>
+        <input type="submit" value="Login"> 
+        </form>
+    -->
+    <div>
+        用户名:<input type="text" id="username" value="{{username}}"><br/>
+        密码:<input type="password" id="password" ><br/>
+        <img src="../verify_code"><input type="text" id="vcode">
+        <input type="submit" id="btnLogin" value="登陆"><br/>
+        <input type="checkbox" id="remember" checked>记住用户名<br/>
+        <div id="errmsg"></div>
+    </div>
+</body>
+</html>

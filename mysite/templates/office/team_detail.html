@@ -1,0 +1,14 @@
+{% extends "office/base.html" %}
+
+{% block content %}
+  <h1>Team Information</h1>
+
+<p><strong>Team Name:</strong>{{ team.team_name }}</p>
+<p><strong>TA Name:</strong> {{ team.ta_name }}</p>
+<p><strong>Group:</strong> {{ team.group }}</p>
+<p style="color:red"><strong>Support Products:</strong> --pending development-- </p>
+
+<a href="{{team.id}}/update/"><b>Edit</b></a>
+<a href="{{team.id}}/delete/"><b>Delete</b></a>
+
+{% endblock %}

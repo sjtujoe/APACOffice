@@ -1,0 +1,23 @@
+{% extends "office/base.html" %}
+
+{% block content %}
+<h2 style="display:inline">Team List </h2>
+<a href="create/" class="addlink">
+<U><b>[Add Team]</b></U></a>
+<p></p>
+
+    
+    {% if object_list %}
+    <ul>
+        {% for team in object_list %}
+        <li class="detail_list">
+          <a href="{{ team.get_absolute_url }}">{{ team.team_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no teams.</p>
+    {% endif %}       
+{% endblock %}
+

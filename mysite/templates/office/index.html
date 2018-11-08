@@ -1,0 +1,15 @@
+{% extends "office/base.html" %}
+
+{% block content %}
+<h1>Welcome to APAC OPG Office Home Site!</h1>
+
+<p>Welcome to <em>APAC Office Team</em>, a very warm and energic family!</p>
+
+<h2>Members</h2>
+
+<div>
+{% load static %}
+<img src="{% static "images/campus.jpg" %}" alt="Office Family" style="width:50%;height:50%;"/>
+</div>
+
+{% endblock %}

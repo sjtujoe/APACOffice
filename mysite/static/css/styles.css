@@ -1,0 +1,20 @@
+.sidebar-nav {
+    margin-top: 18px;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    line-height: 200%;
+}
+
+.OfficeIcon {
+    margin: 10px;
+}
+
+.navbar {
+    background-color: #00b193;
+}
+
+.detail_list{
+    font-size: 16px;
+    margin:5px;
+}

@@ -1,0 +1,13 @@
+{% extends "office/base.html" %}
+
+{% block content %}
+  <h1>Your advice is appreciated!</h1>
+<p>网站建议， 提交BUG均可！</p>
+<form action="add/" method="POST">
+    {% csrf_token %}
+    <label>建议：</label></br>
+    <textarea rows="6" cols="80" name="advice"></textarea><br/>
+    <label>提交者(可选)</label><input name="proposer" type="text" size="8">
+    <input value="提交" type="submit">
+</form>
+{% endblock %}

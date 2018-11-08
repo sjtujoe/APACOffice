@@ -1,0 +1,22 @@
+{% extends "office/base.html" %}
+
+{% block content %}
+<h2 style="display:inline">Product List </h2>
+<a href="create/" class="addlink">
+<U><b>[Add Product]</b></U></a>
+<p></p>
+    
+    {% if object_list %}
+    <ul>
+        {% for product in object_list %}
+        <li class="detail_list">
+          <a href="{{ product.get_absolute_url }}">{{ product.prod_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no teams.</p>
+    {% endif %}       
+{% endblock %}
+

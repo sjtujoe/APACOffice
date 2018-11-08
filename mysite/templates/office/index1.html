@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1">
+    <title>APAC Office</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    -->
+</head>
+<body>
+    <p>Total Engineers: {{ engrs_num }} </p>
+    <p>Engineer list：</p>
+    <ul>
+        {% for engr in engrs %}
+        <li>{{engr.engr_name}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
